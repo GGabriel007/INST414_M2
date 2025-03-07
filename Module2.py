@@ -1,4 +1,4 @@
-import praw
+import praw 
 import networkx as nx
 import matplotlib.pyplot as plt
 import time
@@ -80,7 +80,7 @@ for i, post in enumerate(posts):
             edges.append((commenter, parent_author))  # Edge from commenter to parent
 
         # Stop if too many comments (to prevent getting stuck)
-        if comment_count >= 30:
+        if comment_count >= 70:
             print("    Skipping remaining comments to prevent overload.")
             break
 
@@ -138,4 +138,3 @@ print(f"Nodes: {G.number_of_nodes()}, Edges: {G.number_of_edges()}")
 nx.write_edgelist(G, "reddit_network.edgelist")
 
 print("Graph saved successfully!")
-
